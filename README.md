@@ -8,7 +8,7 @@ Angular Front-End Project
 
 ## Entity Relationship Diagram - v1
 
-![ERD](/docs/diagrams/flea_market_organizer.svg)
+![ERD](/public/docs/diagrams/flea_market_organizer.svg)
 
 ## Technologies used
 
