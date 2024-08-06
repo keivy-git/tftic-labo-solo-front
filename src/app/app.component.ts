@@ -11,5 +11,5 @@ import { FooterComponent } from './core/layouts/footer/footer.component';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'tftic-labo-solo-front';
+  title = 'Flea Market Manager';
 }
