@@ -5,17 +5,17 @@ import { AppComponent } from './app.component';
 export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
-    // children: [
-    //   // {
-    //   //   path: ' ',
-    //   //   loadChildren: () =>
-    //   //     import('./features/features.route').then((m) => m.routes),
-    //   // },
-    //   {
-    //     // path: '',
-    //     // component: HomeComponent,
-    //   },
-    // ],
+    children: [
+      {
+        path: '',
+        loadComponent: () =>
+          import('./home/home.component').then((m) => m.HomeComponent),
+      },
+      {
+        path: 'features',
+        loadChildren: () =>
+          import('./features/features.route').then((m) => m.routes),
+      },
+    ],
   },
 ];
