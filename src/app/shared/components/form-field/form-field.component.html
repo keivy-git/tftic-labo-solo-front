@@ -1,0 +1,17 @@
+<div>
+  <p-floatLabel>
+    <ng-content></ng-content>
+    <label [for]="fieldId">label</label>
+  </p-floatLabel>
+
+  @if (control.invalid && (control.dirty)) {
+    <div class="validation-errors">
+      @if (control.errors?.['required']) {
+        Ce champs est requis
+      }
+      @if (control.errors?.['email']) {
+        Entrée une e-mail valide s'il vous plaît
+      }
+    </div>
+  }
+</div>

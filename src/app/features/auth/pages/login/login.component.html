@@ -1,0 +1,17 @@
+<h1>Bienvenu(e)</h1>
+
+<h2>Connectez-vous pour accèder a votre compte.</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+  <app-form-field [control]="form.controls['email']" fieldId="in-email" label="email">
+    <input type="text" pInputText id="in-email" formControlName="email">
+  </app-form-field>
+  <app-form-field [control]="form.controls['password']" fieldId="in-password" label="Mot de passe">
+    <p-password formControlName="password" [toggleMask]="true" id="in-password" styleClass="w-full" feedback="false"></p-password>
+  </app-form-field>
+
+  <div class="flex justify-content-center">
+    <p-button label="Se connecter" type="submit" styleClass="w-full" [disabled]="form.invalid"></p-button>
+  </div>
+
+</form>
