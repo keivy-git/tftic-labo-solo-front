@@ -12,7 +12,7 @@ export const routes: Routes = [
           import('./home/home.component').then((m) => m.HomeComponent),
       },
       {
-        path: 'features',
+        path: '',
         loadChildren: () =>
           import('./features/features.route').then((m) => m.routes),
       },
