@@ -1,0 +1,15 @@
+::ng-deep .p-menubar {
+  border: none !important;
+  background-color: transparent;
+}
+
+::ng-deep .p-menubar .p-menuitem-link {
+  border: none !important;
+}
+
+::ng-deep .p-menubar .p-menuitem {
+  border: none !important;
+}
+.menu {
+  align-items: center;
+}
