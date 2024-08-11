@@ -1,0 +1,35 @@
+
+@if (fleaMarket$ | async; as fleaMarkets) {
+ @for (fleaMarket of fleaMarkets; track fleaMarket.title) {
+    <div class="  flex justify-content-center font-bold border-round ">
+      <p-card header="{{fleaMarket.title}}">
+        <ng-template pTemplate="subtitle">
+          <i class="pi pi-calendar"></i> {{fleaMarket.dateBegin | date}},<i class="pi pi-map-marker"></i> {{fleaMarket.address.zipCity.city}},<br><i class="pi pi-phone"></i> {{fleaMarket.organizer.phoneNumber}}
+        </ng-template>
+        <ng-template pTemplate="header">
+          <img alt="Card" src="{{fleaMarket.urlPicture}}"/>
+        </ng-template>
+        <p>
+          {{fleaMarket.shortDescription}}
+        </p>
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+            <p-button label="Detail" class="w-full" styleClass="w-full"/>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+
+  }
+        }
+@else {
+  <p>no loaded</p>
+}
+@if (elementsPerPage !== undefined && page !== undefined) {
+  <p-paginator
+    [first]="page() * elementsPerPage"
+    (onPageChange)="onPageChange($event)"
+    [rows]="elementsPerPage"
+  />
+}
+
