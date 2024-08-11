@@ -3,15 +3,20 @@
 <h2>Connectez-vous pour accèder a votre compte.</h2>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
-  <app-form-field [control]="form.controls['email']" fieldId="in-email" label="email">
-    <input type="text" pInputText id="in-email" formControlName="email">
-  </app-form-field>
-  <app-form-field [control]="form.controls['password']" fieldId="in-password" label="Mot de passe">
+  <div class="card flex justify-content-center">
+
+  <p-floatLabel>
+    <input pInputText type="email" pInputText id="in-email" formControlName="email" styleClass="w-full">
+    <label for="in-email">Votre e-mail</label>
+  </p-floatLabel>
+    <br>
+    <p-floatLabel>
     <p-password formControlName="password" [toggleMask]="true" id="in-password" styleClass="w-full" feedback="false"></p-password>
-  </app-form-field>
+      <label for="in-password">Mot de passe</label>
+    </p-floatLabel>
+<br>
 
-  <div class="flex justify-content-center">
     <p-button label="Se connecter" type="submit" styleClass="w-full" [disabled]="form.invalid"></p-button>
-  </div>
 
+  </div>
 </form>
