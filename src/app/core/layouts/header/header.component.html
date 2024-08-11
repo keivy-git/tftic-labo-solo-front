@@ -1,4 +1,4 @@
-
+<header>
 <div class="flex justify-content-between menu">
   <p-menubar class="my-menu" [model]="items">
     <ng-template pTemplate="start">
@@ -15,10 +15,6 @@
 <!--  deuxieme menu-->
   <p-menubar [model]="itemsLog">
     <ng-template pTemplate="end">
-      <div class="flex align-items-center">
-        <input type="text" pInputText placeholder="Search" class="w-8rem sm:w-auto" />
-        <p-avatar image="icon" shape="circle" />
-      </div>
     </ng-template>
         <ng-template pTemplate="item" let-itemlog>
           <a pRipple class=" align-item-end p-menuitem-link" [routerLink]="itemlog.routerLink ? itemlog.routerLink : null" (click)="itemlog.command ? itemlog.command : null" >
@@ -28,4 +24,4 @@
         </ng-template>
   </p-menubar>.
   </div>
-
+</header>

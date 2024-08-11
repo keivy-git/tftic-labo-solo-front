@@ -28,10 +28,12 @@ export class HeaderComponent implements OnInit {
       {
         label: 'Brocante',
         icon: 'pi pi-star',
+        routerLink: '/fleamarkets'
       },
       {
         label: 'Contact',
         icon: 'pi pi-envelope',
+        routerLink: '/contact'
       },
     ];
     this.itemsLog = [
@@ -41,6 +43,7 @@ export class HeaderComponent implements OnInit {
       },
       {
         label: 'S´enregistrer',
+        routerLink: '/register'
       },
     ];
   }
