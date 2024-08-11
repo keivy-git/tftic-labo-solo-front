@@ -1,0 +1,16 @@
+.bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+
+  img {
+    padding: 0 25px 25px 25px;
+    border-radius: 80px;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    background-size: cover;
+  }
+}
