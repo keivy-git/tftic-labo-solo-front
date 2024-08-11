@@ -1,6 +1,7 @@
 import { Component, Input, WritableSignal} from '@angular/core';
-import { ZipCity} from "../../models/zip-city";
+
 import {FilterLocationComponent} from "../filter-location/filter-location.component";
+import {Address, ZipCity} from "../../models/address.model";
 
 @Component({
   selector: 'app-filters-zip-city',
@@ -15,7 +16,11 @@ export class FiltersZipCityComponent {
 
   addFilter(filter: ZipCity) {
     this.filtersZipCity.update((filters) => {
-      return new Map([...filters, ['city', filter.city], ['zip', filter.zip]]);
+      return new Map([
+        ...filters,
+        ['city', filter.city],
+        ['zip', filter.zip],
+      ]);
     });
 
     this.page.set(0);
