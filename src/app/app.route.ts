@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AppComponent } from './app.component';
 
-export const routes: Routes = [
+export const AppRoute: Routes = [
   {
     path: '',
     children: [
@@ -14,7 +12,7 @@ export const routes: Routes = [
       {
         path: '',
         loadChildren: () =>
-          import('./features/features.route').then((m) => m.routes),
+          import('./features/features.route').then((m) => m.FeaturesRoutes),
       },
     ],
   },
