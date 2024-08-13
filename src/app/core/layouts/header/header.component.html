@@ -1,6 +1,6 @@
 <header>
 <div class="flex justify-content-between menu">
-  <p-menubar class="my-menu" [model]="items">
+  <p-menubar class="my-menu" [model]="menuItemsLeft()">
     <ng-template pTemplate="start">
     <h3>Flea Market Manager</h3>
     </ng-template>
@@ -13,7 +13,7 @@
     </ng-template>
   </p-menubar>
 <!--  deuxieme menu-->
-  <p-menubar [model]="itemsLog">
+  <p-menubar [model]="menuItemsRight()">
     <ng-template pTemplate="end">
     </ng-template>
         <ng-template pTemplate="item" let-itemlog>
