@@ -1,0 +1,65 @@
+<h3>Ajouter une nouvelle brocante</h3>
+
+<form [formGroup]="fleaMarketForm" (ngSubmit)="addFleaMarket()">
+  <p-floatLabel>
+    <input pInputText id="title" formControlName="title"/>
+    <label for="title">Titre</label>
+  </p-floatLabel>
+  <p-floatLabel>
+    <textarea id="description" pInputTextarea formControlName="description"></textarea>
+    <label for="description">Description</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <textarea id="shortDescription" pInputTextarea formControlName="shortDescription"></textarea>
+    <label for="shortDescription">Description Courte</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <input id="urlPicture" type="text" pInputText formControlName="urlPicture"/>
+    <label for="urlPicture">URL de l'image</label>
+  </p-floatLabel>
+
+  <p>
+    <label for="dateBegin">Date de début</label>
+    <input id="dateBegin" type="date" pInputText formControlName="dateBegin"/>
+  </p>
+  <label for="dateEnd">Date de fin</label>
+  <input id="dateEnd" type="date" pInputText formControlName="dateEnd"/>
+  <p>
+    <label for="pricePerMeter">Prix par mètre</label>
+    <input id="pricePerMeter" type="number" pInputText formControlName="pricePerMeter"/>
+  </p>
+  <label for="locationPrice">Prix de l'emplacement</label>
+  <input id="locationPrice" type="number" pInputText formControlName="locationPrice"/>
+
+  <p-floatLabel>
+    <input id="street" type="text" pInputText formControlName="street"/>
+    <label for="street">Rue :</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <p-autoComplete id="city"
+                    formControlName="city"
+                    optionValue="id"
+                    [suggestions]="cities"
+                    (onSelect)="setZip($event)">
+    </p-autoComplete>
+
+    <label for="city">Localité</label>
+  </p-floatLabel>
+
+  <p-floatLabel>
+    <p-autoComplete id="zip"
+                    formControlName="zip"
+                    optionValue="id"
+                    [suggestions]="zips"
+                    (onSelect)="setCity($event)">
+    </p-autoComplete>
+    <label for="zip">Code Postal</label>
+  </p-floatLabel>
+
+  <div class="p-field">
+    <p-button label="Enregistrer" type="submit" [disabled]="fleaMarketForm.invalid"></p-button>
+  </div>
+</form>
