@@ -1,6 +1,4 @@
-import {Address} from "../../../shared/models/address.model";
-import {FleaMarket} from "../models/flea-market.model";
-import {Validators} from "@angular/forms";
+import { Validators } from '@angular/forms';
 
 export interface FleaMarketForm {
   title: string;
@@ -11,15 +9,19 @@ export interface FleaMarketForm {
   dateEnd: Date;
   pricePerMeter: number;
   locationPrice: number;
-  street: string;
-  city: string;
-  zip: string;
+  address: {
+    street: string;
+    zipCity: {
+      city: string;
+      zip: string;
+    };
+  };
 }
 
 export const FleaMarket_Form = {
   title: ['', Validators.required],
   description: ['', Validators.required],
-  shortDescription: ['', Validators.required],
+  shortDescription: ['', [Validators.required, Validators.maxLength(128)]],
   urlPicture: [''],
   dateBegin: ['', Validators.required],
   dateEnd: ['', Validators.required],
@@ -28,4 +30,4 @@ export const FleaMarket_Form = {
   street: ['', Validators.required],
   city: ['', Validators.required],
   zip: ['', Validators.required],
-}
+};
