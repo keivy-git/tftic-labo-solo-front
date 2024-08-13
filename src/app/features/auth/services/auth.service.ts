@@ -17,13 +17,13 @@ import { UserType } from '../models/user.model';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService implements OnInit {
+export class AuthService {
   private _currentUser$ = new BehaviorSubject<IAuth | null>(null);
 
   private readonly cookieService = inject(CookieService);
   private readonly httpClient = inject(HttpClient);
 
-  ngOnInit(): void {
+  constructor() {
     this.loadUser();
   }
 
@@ -101,7 +101,6 @@ export class AuthService implements OnInit {
 
   loadUser() {
     const userCookie = this.cookieService.get(COMMON.user.cookieName);
-
     if (userCookie) {
       this.currentUser = JSON.parse(atob(userCookie));
     }
