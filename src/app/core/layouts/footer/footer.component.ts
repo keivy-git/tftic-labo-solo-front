@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {TranslateModule} from "@ngx-translate/core";
-import {RouterLink} from "@angular/router";
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -16,15 +16,15 @@ export class FooterComponent {
       links: [
         {
           label: 'Qui somme nous ?',
-          routerLink: '/about'
+          routerLink: '/about',
         },
         {
           label: 'Brocante',
-          routerLink: '/fleamarket'
+          routerLink: '/fleamarkets',
         },
         {
           label: 'Contact',
-          routerLink: '/contact'
+          routerLink: '/contact',
         },
       ],
     },
@@ -33,15 +33,16 @@ export class FooterComponent {
       links: [
         {
           label: 'Centre d´aide',
-          routerLink: '/help'
+          routerLink: '/help',
         },
         {
           label: 'F.A.Q',
-          routerLink: '/faq'
+          routerLink: '/faq',
         },
         {
           label: 'Politque de confidentialité',
-          routerLink: '/privacy' },
+          routerLink: '/privacy',
+        },
       ],
     },
   ];
