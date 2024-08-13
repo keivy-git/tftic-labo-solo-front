@@ -1,9 +1,12 @@
-import {Component, EventEmitter, inject, OnInit, Output} from '@angular/core';
-import {AutoCompleteCompleteEvent, AutoCompleteModule} from "primeng/autocomplete";
-import {FleaMarketService} from "../../../features/flea-market/services/flea-market.service";
-import {AccordionModule} from "primeng/accordion";
-import {FormsModule} from "@angular/forms";
-import {ZipCity} from "../../models/address.model";
+import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
+import {
+  AutoCompleteCompleteEvent,
+  AutoCompleteModule,
+} from 'primeng/autocomplete';
+import { FleaMarketService } from '../../../features/flea-market/services/flea-market.service';
+import { AccordionModule } from 'primeng/accordion';
+import { FormsModule } from '@angular/forms';
+import { ZipCity } from '../../models/address.model';
 
 @Component({
   selector: 'app-filter-location',
@@ -12,7 +15,7 @@ import {ZipCity} from "../../models/address.model";
   templateUrl: './filter-location.component.html',
   styleUrl: './filter-location.component.scss',
 })
-export class FilterLocationComponent implements OnInit{
+export class FilterLocationComponent implements OnInit {
   private readonly fleaMarketService = inject(FleaMarketService);
 
   private locationList!: ZipCity[];
@@ -46,6 +49,4 @@ export class FilterLocationComponent implements OnInit{
   getLocationLabel(location: ZipCity): string {
     return `${location.zip} - ${location.city}`;
   }
-
-
 }
